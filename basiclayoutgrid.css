@@ -1,0 +1,66 @@
+html {
+	box-sizing: border-box;
+}    
+body {
+    background-color: #fff;
+}
+
+#wrapper {
+    display: grid;
+    grid-template-columns: 235px 750px;
+    grid-template-rows: 150px 500px 95px;
+    grid-template-areas: 
+    "header header"
+    "nav main"
+    "footer footer";
+    grid-gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    height: 100vh;
+}
+
+header {
+    background-color: #828282;
+    grid-area: header;
+    max-height: 150px;
+}
+
+nav {
+    background-color: #754435;
+    grid-area: nav;
+}
+
+main {
+    background-color: #375170;
+    grid-area: main;
+}
+
+footer {
+    background-color: #5c5c5d;
+    max-height: 95px;
+    grid-area: footer;
+}
+
+/* I can't get the text to vertically align - please let me know what i've messed up im quite rusty */
+
+#text {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    display: grid;       
+    align-items: center;  
+    justify-content: center;  
+}
+
+@media only screen and (max-width:800px)  { 
+    #wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.8fr 2.2fr 0.5fr;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
+        grid-gap: 20px;
+    }
+}
