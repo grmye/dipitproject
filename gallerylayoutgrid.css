@@ -1,0 +1,256 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:root{
+    --clr-background: #fff;
+    --clr-dark: #333;
+    --clr-white: #fff;
+    --clr-layout: #676767;
+    --clr-box: #999;
+    --clr-grey: #ccc;
+
+    --font-size: 16px;
+    --border-radius: 0.2em;
+}
+
+#wrapper {
+    display: grid;
+    grid-template-rows: 20% 75% 10%;
+    grid-template-areas: 
+    "header header header"
+    "body body body"
+    "footer footer footer";
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+header {
+    display: grid;
+    grid-area: header;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-areas:
+    "logo header contact";
+    background-color: var(--clr-layout);
+}
+
+.logo {
+    display: grid;
+    justify-content: center;
+    background-color: var(--clr-box);
+    padding: 30px 25px;
+    margin: 10px;
+    grid-area: logo;
+}
+.logo a {
+    text-align: center;
+    font-family: arial;
+    color: var(--clr-dark);
+    font-size: 50px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.contact {
+    display: grid;
+    background-color: var(--clr-box);
+    font-size: 20px;
+    font-family: arial;
+    padding: 40px 25px;
+    margin: 10px;
+    grid-area: contact;
+}
+
+header ul {
+    list-style-type: none;
+    line-height: 160%;
+    text-align: right;
+}
+
+.contact a {
+    font-family: arial;
+    color: var(--clr-dark);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.content {
+    display: grid;
+    grid-area: body;
+    grid-template-columns: 20% 80%;
+    grid-template-areas:
+    "nav main";
+    gap: 20px;
+    max-width: 1180px;
+}
+
+nav {
+    background-color: var(--clr-layout);
+    font-family: arial;
+    grid-area: nav;
+}
+
+.navh1 {
+    line-height: 200%;
+    font-size: 24px;
+    color: var(--clr-grey);
+    padding: 10px 20px 0px 20px;
+}
+
+.navlinks {
+    padding: 0px 35px;
+    color: var(--clr-grey);
+    list-style-type: "> ";
+    line-height: 200%
+}
+nav a {
+    font-size: 16px;
+    color: var(--clr-grey);
+    text-decoration: none;
+}
+
+main {
+    grid-area: main;
+    background-color: var(--clr-grey);
+    padding: 20px;
+}
+
+h2 {
+    color: var(--clr-dark);
+    font-family: arial;
+    font-size: 24px;
+    padding: 0 20px 0 20px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.card {
+    font-family: arial;
+    padding: 10px;
+}
+
+.card__title {
+    font-size: 20px;
+    padding: 20px 0 20px 0;
+}
+.card__body {
+    font-size: 14px;
+}
+.card__image {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-white);
+    border-radius: 5px;
+    height: 225px;
+}
+
+.card__image img {
+    width: 115px;
+    height: 125px;
+}
+
+footer {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-layout);
+    grid-area: footer;
+}
+
+.footertext {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: var(--clr-grey);
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    color: var(--clr-grey);
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+@media only screen and (max-width:1012px)  { 
+    
+    #wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 5fr 0.2fr;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "logo"
+        "contact";
+        padding: 10px;
+    }
+    
+    .logo {
+        display: grid;
+        align-items: center;
+    }
+
+    .contact {
+        display: grid;
+        align-items: center;
+    }
+
+    .content {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "nav"
+    "main";
+    }
+
+    nav {
+    padding: 0 0 20px 20px;
+    }
+
+    h2 {
+    text-align: center;
+    }
+    
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+            }
+
+    .card__body {
+        padding: 0px;
+        text-align: center;
+    }
+
+    .card__image {
+        padding: 0px;
+    }
+}
